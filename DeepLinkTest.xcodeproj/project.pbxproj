@@ -13,6 +13,7 @@
 		F06CDC1129BBEEFB0056560F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F06CDC0F29BBEEFB0056560F /* Main.storyboard */; };
 		F06CDC1329BBEEFE0056560F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F06CDC1229BBEEFE0056560F /* Assets.xcassets */; };
 		F06CDC1629BBEEFE0056560F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F06CDC1429BBEEFE0056560F /* LaunchScreen.storyboard */; };
+		F081A0E729C001AD0043026B /* DeepLinkNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F081A0E629C001AD0043026B /* DeepLinkNavigator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		F06CDC1229BBEEFE0056560F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F06CDC1529BBEEFE0056560F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F06CDC1729BBEEFE0056560F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F081A0E529BFC72D0043026B /* DeepLinkTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DeepLinkTest.entitlements; sourceTree = "<group>"; };
+		F081A0E629C001AD0043026B /* DeepLinkNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkNavigator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +59,7 @@
 		F06CDC0829BBEEFB0056560F /* DeepLinkTest */ = {
 			isa = PBXGroup;
 			children = (
+				F081A0E529BFC72D0043026B /* DeepLinkTest.entitlements */,
 				F06CDC0929BBEEFB0056560F /* AppDelegate.swift */,
 				F06CDC0B29BBEEFB0056560F /* SceneDelegate.swift */,
 				F06CDC0D29BBEEFB0056560F /* ViewController.swift */,
@@ -63,6 +67,7 @@
 				F06CDC1229BBEEFE0056560F /* Assets.xcassets */,
 				F06CDC1429BBEEFE0056560F /* LaunchScreen.storyboard */,
 				F06CDC1729BBEEFE0056560F /* Info.plist */,
+				F081A0E629C001AD0043026B /* DeepLinkNavigator.swift */,
 			);
 			path = DeepLinkTest;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F06CDC0E29BBEEFB0056560F /* ViewController.swift in Sources */,
+				F081A0E729C001AD0043026B /* DeepLinkNavigator.swift in Sources */,
 				F06CDC0A29BBEEFB0056560F /* AppDelegate.swift in Sources */,
 				F06CDC0C29BBEEFB0056560F /* SceneDelegate.swift in Sources */,
 			);
@@ -285,6 +291,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DeepLinkTest/DeepLinkTest.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JZ4TVZD6QL;
@@ -302,6 +310,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.forevernow.DeepLinkTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -313,6 +322,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DeepLinkTest/DeepLinkTest.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JZ4TVZD6QL;
@@ -330,6 +341,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.forevernow.DeepLinkTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

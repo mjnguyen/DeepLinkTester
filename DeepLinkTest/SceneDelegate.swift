@@ -17,6 +17,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        if let userActivity = connectionOptions.userActivities.filter({$0.activityType == NSUserActivityTypeBrowsingWeb}).first {
+            handleDeepLink(userActivity)
+        }
+    }
+
+    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+        if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
+            handleDeepLink(userActivity)
+        }
+    }
+
+
+    func handleDeepLink(_ userActivity: NSUserActivity) {
+        if let url = userActivity.webpageURL {
+            print(url.absoluteURL.absoluteString)
+            if let vc = self.window?.rootViewController as? ViewController {
+                vc.message = url.absoluteString
+            }
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

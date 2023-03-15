@@ -10,11 +10,28 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        if let userActivityDictionary = launchOptions?[.userActivityDictionary] as? [AnyHashable: Any],
+           let userActivity = userActivityDictionary["UIApplicationLaunchOptionsUserActivityKey"] as? NSUserActivity,
+           userActivity.activityType == NSUserActivityTypeBrowsingWeb {
+            handleDeepLink(userActivity)
+        }
+
         return true
+    }
+
+    // Deep Link Handling
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        handleDeepLink(userActivity)
+
+        return true
+
+    }
+
+    func handleDeepLink(_ userActivity: NSUserActivity) {
+        if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
+//            DeepLinkNavigator.instance.handleNavigationUserActivty(userActivity, navigationController: window?.rootViewController?.navigationController)
+        }
     }
 
     // MARK: UISceneSession Lifecycle
