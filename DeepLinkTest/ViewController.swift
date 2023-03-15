@@ -11,20 +11,35 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet var messageLabel: UILabel!
-    var message: String?
+    private var _message: String?
+    var message: String? {
+        set {
+            _message = newValue
+            messageLabel?.text = newValue
+        }
+        get {
+            return _message
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        messageLabel.text = message
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super .viewDidAppear(animated)
-        if messageLabel != nil {
-            messageLabel.text = message
-        }
+
+        messageLabel?.text = message
+
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        print("message label is : ", messageLabel?.text ?? "-")
+    }
 
 }
 
